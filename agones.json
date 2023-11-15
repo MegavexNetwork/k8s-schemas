@@ -1,0 +1,46 @@
+{
+  "definitions": {
+    "dev.agones.v1.Fleet": {
+      "type": "object",
+      "x-kubernetes-group-version-kind": [
+        {
+          "group": "agones.dev",
+          "kind": "Fleet",
+          "version": "v1"
+        }
+      ],
+      "properties": {
+        "spec": {
+          "type": "object",
+          "properties": {
+            "template": {
+              "type": "object",
+              "properties": {
+                "spec": {
+                  "type": "object",
+                  "properties": {
+                    "template": {
+                      "type": "object",
+                      "properties": {
+                        "spec": {
+                          "type": "object",
+                          "properties": {
+                            "containers": {
+                              "x-kubernetes-patch-merge-key": "name",
+                              "x-kubernetes-patch-strategy": "merge",
+                              "type": "array"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
