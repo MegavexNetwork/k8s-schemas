@@ -3,12 +3,12 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"os"
 	"net/http"
+	"os"
 )
 
 type Schema struct {
-	Definitions  map[string]interface{} `json:"definitions"`
+	Definitions map[string]interface{} `json:"definitions"`
 }
 
 func main() {
@@ -68,14 +68,14 @@ func FetchNativeSchema() (*Schema, error) {
 }
 
 func MergeSchemas(schemas []Schema) Schema {
-	merged := Schema {
+	merged := Schema{
 		Definitions: make(map[string]interface{}),
 	}
 	for _, schema := range schemas {
 		for key, value := range schema.Definitions {
 			merged.Definitions[key] = value
 		}
-    }
+	}
 	return merged
 }
 
