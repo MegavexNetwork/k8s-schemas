@@ -17,7 +17,12 @@
               "type": "object",
               "properties": {
                 "spec": {
-                  "$ref": "#/definitions/io.k8s.api.core.v1.PodTemplateSpec"
+                  "type": "object",
+                  "properties": {
+                    "template": {
+                      "$ref": "#/definitions/io.k8s.api.core.v1.PodTemplateSpec"
+                    }
+                  }
                 }
               }
             }
